@@ -27,14 +27,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var play = true
     var score = 0{
         didSet{
-//            if score%10 == 0 {
-//                roadStripTimeInterval -= 0.1
-//                roadItemTimeInterval -= 0.1
-//                scoreTimeInterval -= 0.1
-//                roadStripTimeInterval += 5
-//                roadItemTimeInterval += 5
-//                startTimers()
-//            }
+            if score%10 == 0 {
+                roadStripTimeInterval -= 0.05
+                roadItemTimeInterval -= 0.05
+                scoreTimeInterval -= 0.05
+                roadStripSpaceTravel += 2
+                roadItemSpaceTravel += 2
+                stopTimers()
+                startTimers()
+            }
         }
     }
     
