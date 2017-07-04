@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import GoogleMobileAds
 
 struct PhysicCategory{
     static let none: UInt32 = 0
@@ -16,6 +17,13 @@ struct PhysicCategory{
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var bannerView: GADBannerView!
+    var interstitial: GADInterstitial!
+    var parentViewController: UIViewController{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return (appDelegate.window?.rootViewController)!
+    }
     
     var leftCar: SKSpriteNode!
     var rightCar: SKSpriteNode!
@@ -52,6 +60,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var roadItemSpaceTravel = 15.0
     
     override func didMove(to view: SKView) {
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+        
+        var frame = bannerView.frame
+        frame.origin.y = self.view!.frame.height - frame.height
+        bannerView.frame = frame
+        
+        bannerView.adUnitID = "ca-app-pub-5492969470059595/1605692663"
+        bannerView.rootViewController = parentViewController
+        view.addSubview(bannerView)
+        let request = GADRequest()
+        request.testDevices = ["30d37e84cbe7a1dc22a989559596b3b5"]
+        bannerView.load(request)
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-5492969470059595/5198287462")
+        interstitial.load(request)
+        
         physicsWorld.contactDelegate = self
         
         leftCar = childNode(withName: "LeftCar") as! SKSpriteNode
@@ -100,6 +124,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         play = false
         saveHighscore()
         stopGame()
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: parentViewController)
+        }
     }
     
     func createRoadStrip(){
