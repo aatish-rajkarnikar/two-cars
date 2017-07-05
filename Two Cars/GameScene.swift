@@ -36,9 +36,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0{
         didSet{
             if score%10 == 0 {
-                roadStripTimeInterval -= 0.05
-                roadItemTimeInterval -= 0.05
-                scoreTimeInterval -= 0.05
+                roadStripTimeInterval = (roadStripTimeInterval > 0) ? roadStripTimeInterval - 0.05 : 0.01
+                roadItemTimeInterval = (roadItemTimeInterval > 0) ? roadItemTimeInterval - 0.05 : 0.01
                 roadStripSpaceTravel += 2
                 roadItemSpaceTravel += 2
                 stopTimers()
@@ -52,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var roadItemTimer: Timer?
     var scoreTimer: Timer?
     
-    var roadStripTimeInterval = 0.3
+    var roadStripTimeInterval = 0.4
     var roadItemTimeInterval = 0.8
     var scoreTimeInterval = 1.0
     
@@ -92,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         rightCar.physicsBody?.contactTestBitMask = PhysicCategory.other
         rightCar.physicsBody?.collisionBitMask = PhysicCategory.none
         
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(GameScene.removeItems), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(GameScene.removeItems), userInfo: nil, repeats: true)
 
         startTimers()
         
@@ -157,7 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let height = self.frame.size.height
         let width = self.frame.size.width
         
-        let car = arc4random_uniform(3)
+        let car = arc4random_uniform(4)
         var carName:String
         switch car {
         case 0:
