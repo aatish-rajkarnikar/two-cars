@@ -28,6 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var leftCar: SKSpriteNode!
     var rightCar: SKSpriteNode!
     var scoreLabel: SKLabelNode!
+    var backgroundAudio: SKAudioNode!
     
     var moveLeftCarToRight = false
     var moveRightCarToLeft = false
@@ -74,6 +75,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-5492969470059595/5198287462")
         interstitial.load(request)
+        
+        
+        
         
         physicsWorld.contactDelegate = self
         

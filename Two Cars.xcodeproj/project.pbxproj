@@ -10,9 +10,9 @@
 		B02085961F0BA467005B3CC6 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B02085951F0BA467005B3CC6 /* MenuScene.sks */; };
 		B02085981F0BA54D005B3CC6 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02085971F0BA54D005B3CC6 /* MenuScene.swift */; };
 		B02085A11F0BDBE0005B3CC6 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02085A01F0BDBE0005B3CC6 /* GoogleMobileAds.framework */; };
+		B041FBB51F0D38E7009D7886 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B041FBB41F0D38E7009D7886 /* background.mp3 */; };
 		B0EF99D41F0A1746004594CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EF99D31F0A1746004594CB /* AppDelegate.swift */; };
 		B0EF99D61F0A1746004594CB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0EF99D51F0A1746004594CB /* GameScene.sks */; };
-		B0EF99D81F0A1746004594CB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0EF99D71F0A1746004594CB /* Actions.sks */; };
 		B0EF99DA1F0A1746004594CB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EF99D91F0A1746004594CB /* GameScene.swift */; };
 		B0EF99DC1F0A1746004594CB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EF99DB1F0A1746004594CB /* GameViewController.swift */; };
 		B0EF99DF1F0A1746004594CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EF99DD1F0A1746004594CB /* Main.storyboard */; };
@@ -24,10 +24,10 @@
 		B02085951F0BA467005B3CC6 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		B02085971F0BA54D005B3CC6 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		B02085A01F0BDBE0005B3CC6 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		B041FBB41F0D38E7009D7886 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		B0EF99D01F0A1746004594CB /* Two Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Two Cars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EF99D31F0A1746004594CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0EF99D51F0A1746004594CB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		B0EF99D71F0A1746004594CB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B0EF99D91F0A1746004594CB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B0EF99DB1F0A1746004594CB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B0EF99DE1F0A1746004594CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,6 @@
 			children = (
 				B0EF99D31F0A1746004594CB /* AppDelegate.swift */,
 				B0EF99D51F0A1746004594CB /* GameScene.sks */,
-				B0EF99D71F0A1746004594CB /* Actions.sks */,
 				B0EF99D91F0A1746004594CB /* GameScene.swift */,
 				B0EF99DB1F0A1746004594CB /* GameViewController.swift */,
 				B0EF99DD1F0A1746004594CB /* Main.storyboard */,
@@ -87,6 +86,7 @@
 				B0EF99E51F0A1746004594CB /* Info.plist */,
 				B02085951F0BA467005B3CC6 /* MenuScene.sks */,
 				B02085971F0BA54D005B3CC6 /* MenuScene.swift */,
+				B041FBB41F0D38E7009D7886 /* background.mp3 */,
 			);
 			path = "Two Cars";
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 				B0EF99D61F0A1746004594CB /* GameScene.sks in Resources */,
 				B0EF99E11F0A1746004594CB /* Assets.xcassets in Resources */,
 				B0EF99E41F0A1746004594CB /* LaunchScreen.storyboard in Resources */,
-				B0EF99D81F0A1746004594CB /* Actions.sks in Resources */,
+				B041FBB51F0D38E7009D7886 /* background.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
