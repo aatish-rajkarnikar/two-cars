@@ -12,12 +12,14 @@ import GameplayKit
 class MenuScene: SKScene {
     
     var restart: SKLabelNode!
+    var home: SKLabelNode!
     var score: SKLabelNode!
     var bestScore: SKLabelNode!
     var playerScore: Int = 0
     
     override func didMove(to view: SKView) {
         restart = childNode(withName: "Restart") as! SKLabelNode
+        home  = childNode(withName: "Home") as! SKLabelNode
         score = childNode(withName: "score") as! SKLabelNode
         bestScore = childNode(withName: "best") as! SKLabelNode
         
@@ -30,6 +32,10 @@ class MenuScene: SKScene {
             let touchLocation = touch.location(in: self)
             if atPoint(touchLocation).name == "Restart" {
                 let gameScene = SKScene(fileNamed: "GameScene")
+                gameScene?.scaleMode = .aspectFill
+                view?.presentScene(gameScene)
+            }else if atPoint(touchLocation).name == "Home" {
+                let gameScene = SKScene(fileNamed: "HomeScene")
                 gameScene?.scaleMode = .aspectFill
                 view?.presentScene(gameScene)
             }
